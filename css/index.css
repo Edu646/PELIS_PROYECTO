@@ -1,0 +1,246 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+/* Fondo y contenedor principal */
+body {
+    
+    background-color: darkgreen;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    
+    font-family: "Chango", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+      
+
+
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 40px;
+    border: 2px solid #888;
+    width: 70%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#search-container {
+    display: flex; /* Alinea en fila */
+    align-items: center; /* Centra verticalmente */
+    gap: 10px; /* Espacio entre barra y botón */
+    width: 100%; /* Ajusta el ancho del contenedor */
+    justify-content: center; /* Centra horizontalmente en la página */
+    margin-top: 20px; /* Espacio desde el título */
+}
+
+
+#Nombre_p {
+    height: 40px; /* Altura del input */
+    flex-grow: 1; /* Permite que se ajuste al ancho disponible */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 0 10px; /* Espaciado interno */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    max-width: 400px; /* Evita que sea demasiado grande */
+}
+
+#search {
+    height: 40px;
+    padding: 0 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#search:hover {
+    background-color: #cc5200;
+}
+
+
+
+#loadMore:hover {
+    background-color: #cc5200;
+}
+
+/* Estilo para mostrar el total de resultados */
+#totalResultados {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos del contenedor de películas */
+#movies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Estilo de cada película */
+.movie-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movie-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.suggestions-box {
+    position: absolute;
+    top: 10em;
+    background-color:transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid #ff6f00;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10;
+    border-radius: 2em 2em 2em 2em;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Modal */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#modal-details {
+    background: linear-gradient(to bottom right, blue, rgb(225, 34, 66));
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+#modal-details img {
+    max-width: 50%;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    border-radius: 8px;
+}
+
+/* Estilo de los párrafos del modal */
+#modal-details p {
+    background-color: #cc5200;
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    border-radius: 2em 0 2em 0;
+}
+
+
+
+/* Estilo del botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-btn:hover {
+    background-color: #cc5200;
+}
+
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.charts-container canvas {
+    width: 100% !important;
+    max-width: 500px;
+    margin: 10px auto;
+}

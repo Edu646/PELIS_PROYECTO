@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="pelis.js" defer></script> <!-- Usar defer para asegurar que el JS se cargue después de HTML -->
+ 
+</head>
+<body>
+    <h1>PELICULILLAS CHULAS</h1>
+    <div class="search-container">
+        <input type="text" name="Nombre" id="Nombre_p">
+        <button id="search">buscar</button>
+    </div>
+
+    <div id="filters">
+        <label>
+            <input type="radio" name="filter" value="all" checked> Todos
+        </label>
+        <label>
+            <input type="radio" name="filter" value="movie"> Películas
+        </label>
+        <label>
+            <input type="radio" name="filter" value="series"> Series
+        </label>
+    </div>
+    
+
+    <!-- Contenedor donde se mostrarán las películas -->
+    <div id="movies-list" class="movie-grid"></div>
+
+    <!-- Modal para mostrar detalles -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <div id="suggestions" class="suggestions-box">
+    </div>
+
+</body>
+</html>
